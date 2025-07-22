@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:user_dashboard/core/constants.dart';
@@ -43,9 +42,16 @@ class _DateOfBirthPickerState extends State<DateOfBirthPicker> {
         readOnly: true,
         decoration: InputDecoration(
           hintStyle: textStyle(15, Colors.grey.shade600),
-          hintText: 'Date of Birth',
+          hintText: dobHint,
           suffixIcon: Icon(Icons.calendar_today),
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(14),
+            borderSide: BorderSide(color: Colors.grey.shade200, width: 3),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(14),
+            borderSide: BorderSide(color: thmeBlue, width: 3),
+          ),
         ),
         onTap: () => _selectDate(context),
       ),

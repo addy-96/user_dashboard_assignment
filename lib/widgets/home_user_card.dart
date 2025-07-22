@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:user_dashboard/core/constants.dart';
 import 'package:user_dashboard/core/textstyle.dart';
@@ -28,7 +30,11 @@ class HomeUserCard extends StatelessWidget {
 
           child: Row(
             children: [
-              CircleAvatar(backgroundImage: NetworkImage(profileimgaeUrl)),
+              CircleAvatar(
+                backgroundImage: profileimgaeUrl.contains('cache')
+                    ? FileImage(File(profileimgaeUrl))
+                    : NetworkImage(profileimgaeUrl),
+              ),
               SizedBox(width: 10),
               Expanded(
                 child: Column(

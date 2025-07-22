@@ -15,8 +15,13 @@ class CreateUserTextField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: TextField(
+        keyboardType: getKeyBoardType(inputType: hintText),
+        maxLength: getInputMaxLength(isEmail: hintText == 'Email'),
+        controller: textController,
+        style: textStyle(15, Colors.black87),
         cursorColor: thmeBlue,
         decoration: InputDecoration(
+          counterText: '',
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(14),
             borderSide: BorderSide(color: Colors.grey.shade200, width: 3),

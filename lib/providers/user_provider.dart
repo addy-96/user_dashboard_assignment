@@ -1,5 +1,7 @@
+import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:user_dashboard/model/user_profile.dart';
 import 'package:user_dashboard/service/services.dart';
 
@@ -7,6 +9,16 @@ enum SortType { az, za }
 
 class UserProvider with ChangeNotifier {
   UserProvider({required this.services});
+
+  String? _selectedProfilePicPath;
+  String? get selectedProfilePicPath => _selectedProfilePicPath;
+
+  String? _selectedGender;
+  String? get selectedGender => _selectedGender;
+  set setGender(String gender) {
+    _selectedGender = gender;
+  }
+
   final Services services;
 
   SortType _currentSort = SortType.az;
@@ -66,4 +78,31 @@ class UserProvider with ChangeNotifier {
     }
     notifyListeners();
   }
+
+  Future<void> selectProfilePicture() async {
+    final pickImage = await ImagePicker().pickImage(
+      source: ImageSource.gallery,
+    );
+
+    if (pickImage == null) {
+      _selectedProfilePicPath = null;
+      return;
+    }
+    _selectedProfilePicPath = pickImage.path;
+    notifyListeners();
+  }
+
+  bool addUser({required UserProfile userProfile}) {
+    try {
+      _userProfiles.add(userProfile);
+      _selectedProfilePicPath = null;
+      _selectedGender = null;
+      notifyListeners();
+      return true;
+    } catch (err) {
+      notifyListeners();
+      return false;
+    }
+  }
+  
 }
