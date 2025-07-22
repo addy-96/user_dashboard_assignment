@@ -1,18 +1,12 @@
-import 'dart:convert';
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 import 'package:user_dashboard/core/constants.dart';
 import 'package:user_dashboard/core/textstyle.dart';
 import 'package:user_dashboard/providers/user_provider.dart';
 
-import 'package:user_dashboard/screens/create_user_screen.dart';
-import 'package:user_dashboard/screens/report_screen.dart';
 import 'package:user_dashboard/screens/user_details_screen.dart';
 import 'package:user_dashboard/widgets/home_cta_section.dart';
-import 'package:user_dashboard/widgets/home_nav_button.dart';
 import 'package:user_dashboard/widgets/home_user_card.dart';
 import 'package:user_dashboard/widgets/search_box.dart';
 import 'package:user_dashboard/widgets/sort_button.dart';
