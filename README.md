@@ -30,8 +30,6 @@ A modern Flutter application showcasing a user-friendly dashboard with search, s
 
 ## 🖼️ Screenshots
 
-> Add your screenshots to the `assets/` folder and showcase them below!
-
 <p align="center">
   <img src="assets/dashboard.png" alt="Dashboard Screen" width="300"/>
   <img src="assets/report.png" alt="Report Screen" width="300"/>
