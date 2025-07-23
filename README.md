@@ -42,8 +42,7 @@ A modern Flutter application showcasing a user-friendly dashboard with search, s
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/user_dashboard_app_assignment.git
-   cd user_dashboard_app_assignment/user_dashboard
+   https://github.com/addy-96/user_dashboard_assignment.git
    ```
 
 2. **Install dependencies**
@@ -71,8 +70,10 @@ A modern Flutter application showcasing a user-friendly dashboard with search, s
 ```
 lib/
  ├── core/
+ ├── model/
  ├── providers/
  ├── screens/
+ ├── service/
  ├── widgets/
  └── main.dart
 assets/
