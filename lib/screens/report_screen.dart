@@ -18,7 +18,7 @@ class ReportScreen extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).pop();
           },
-          icon: Icon(CupertinoIcons.back, size: 30),
+          icon: const Icon(CupertinoIcons.back, size: 30),
         ),
         title: Text(
           'Report',
@@ -38,12 +38,12 @@ class ReportScreen extends StatelessWidget {
                   'Summary of User Activity of ${months[DateTime.now().month + 1]}',
               iconData: Icons.signal_cellular_alt_rounded,
             ),
-            ReportCard(
+            const ReportCard(
               reportTitle: 'Revenue Report',
               reportSubTitle: 'Quarterly revenue analysis',
               iconData: Icons.auto_graph_outlined,
             ),
-            ReportCard(
+            const ReportCard(
               reportTitle: 'User Feedback',
               reportSubTitle: 'Analysis of recent UUSer feedback',
               iconData: Icons.feed,

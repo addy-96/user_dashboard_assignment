@@ -12,7 +12,7 @@ class SortButton extends StatelessWidget {
     final userProvider = Provider.of<UserProvider>(context);
     return PopupMenuButton(
       color: cardWhite,
-      icon: Icon(Icons.sort),
+      icon: const Icon(Icons.sort),
       itemBuilder: (context) => [
         PopupMenuItem(
           onTap: () {
@@ -24,7 +24,7 @@ class SortButton extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(4.0),
             child: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: Text(
                 userProvider.currentSort == SortType.az
                     ? 'Sorted A-Z'
@@ -49,7 +49,7 @@ class SortButton extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(4.0),
             child: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: Text(
                 userProvider.currentSort == SortType.za
                     ? 'Sorted Z-A'

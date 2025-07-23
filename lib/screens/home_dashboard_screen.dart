@@ -4,8 +4,6 @@ import 'package:provider/provider.dart';
 import 'package:user_dashboard/core/constants.dart';
 import 'package:user_dashboard/core/textstyle.dart';
 import 'package:user_dashboard/providers/user_provider.dart';
-
-import 'package:user_dashboard/screens/user_details_screen.dart';
 import 'package:user_dashboard/widgets/home_cta_section.dart';
 import 'package:user_dashboard/widgets/home_user_card.dart';
 import 'package:user_dashboard/widgets/search_box.dart';
@@ -45,8 +43,8 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
       ),
       body: Column(
         children: [
-          SizedBox(height: 10),
-          Row(
+          const SizedBox(height: 10),
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               SizedBox(width: 5),
@@ -60,7 +58,7 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
             child: Consumer<UserProvider>(
               builder: (context, providerValue, child) {
                 if (providerValue.isLoading) {
-                  return Center(child: CircularProgressIndicator());
+                  return const Center(child: CircularProgressIndicator());
                 } else if (!providerValue.isLoading &&
                     providerValue.userProfile.isNotEmpty) {
                   return Padding(
@@ -86,33 +84,24 @@ class _HomeDashboardScreenState extends State<HomeDashboardScreen> {
                                       .isEmpty
                                   ? providerValue.userProfile[index]
                                   : providerValue.userBuffer[index];
-                              return InkWell(
-                                onTap: () {
-                                  Navigator.of(context).push(
-                                    MaterialPageRoute(
-                                      builder: (context) => UserDetailsScreen(),
-                                    ),
-                                  );
-                                },
-                                child: HomeUserCard(
-                                  profileimgaeUrl: userProfile.picture,
-                                  emailAddress: userProfile.email,
-                                  username:
-                                      '${userProfile.name.title} ${userProfile.name.first} ${userProfile.name.last}',
-                                ),
+                              return HomeUserCard(
+                                profileimgaeUrl: userProfile.picture,
+                                emailAddress: userProfile.email,
+                                username:
+                                    '${userProfile.name.title} ${userProfile.name.first} ${userProfile.name.last}',
                               );
                             },
                           ),
                         ),
-                        SizedBox(height: 4),
-                        HomeCtaSection(),
-                        SizedBox(height: 30),
+                        const SizedBox(height: 4),
+                        const HomeCtaSection(),
+                        const SizedBox(height: 30),
                       ],
                     ),
                   );
                 }
 
-                return Center(child: Text('Some Error Occured'));
+                return const Center(child: Text('Some Error Occured'));
               },
             ),
           ),
